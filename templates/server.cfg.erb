@@ -7,18 +7,18 @@ loglevel = info
 daemonize = 1
 keeplogs = 1
 max_log_size = 10240
-identity = <%= cfn_node_name %>
+identity = <%= @cfn_node_name %>
 registerinterval = 300
 
 # Plugins
 securityprovider = psk
-plugin.psk = <%= pskpassword %>
+plugin.psk = <%= @pskpassword %>
 
 connector = stomp
-plugin.stomp.host = <%= activemq_server %>
+plugin.stomp.host = <%= @activemq_server %>
 plugin.stomp.port = 61613
 plugin.stomp.user = mcollective
-plugin.stomp.password = <%= activemqpassword %>
+plugin.stomp.password = <%= @activemqpassword %>
 
 # Facts
 factsource = facter
